@@ -22,7 +22,7 @@ import Sidebar from './components/Sidebar.vue';
 
 @media(max-width: 768px) {
   .main {
-    padding-left: 6rem;
+    padding-left: 4rem;
   }
 }
 </style>

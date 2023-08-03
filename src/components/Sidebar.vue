@@ -125,7 +125,6 @@ h3 {
     text-transform: uppercase;
 }
 
-
 h3,
 .text {
     opacity: 0;
