@@ -6,7 +6,12 @@ import Sidebar from './components/Sidebar.vue';
 <template>
   <div class="app">
     <Sidebar />
-    <router-view class="main" />
+    <!-- <router-view class="main" /> -->
+    <router-view class="main" v-slot="{ Component }">
+      <transition mode="out-in">
+        <Component :is="Component" />
+      </transition>
+    </router-view>
   </div>
 </template>
 
@@ -19,6 +24,17 @@ import Sidebar from './components/Sidebar.vue';
   flex: 1 1 0;
   padding: 2rem;
 }
+
+.v-enter-from,
+v-leave-to {
+  opacity: 0;
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.2s ease-out
+}
+
 
 @media(max-width: 768px) {
   .main {
