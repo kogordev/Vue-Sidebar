@@ -1,5 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from '../views/HomeView.vue'
+import AboutView from '../views/AboutView.vue'
+import TeamView from "../views/TeamView.vue";
+import ContactView from "../views/ContactView.vue";
+import SettingsView from "../views/SettingsView.vue";
 
 const routes = [
     {
@@ -10,22 +14,22 @@ const routes = [
     {
         path: '/about',
         name: 'AboutView',
-        component: () => import('../views/AboutView.vue')
+        component: AboutView
     },
     {
         path: '/team',
         name: 'TeamView',
-        component: () => import('../views/TeamView.vue')
+        component: TeamView
     },
     {
         path: '/contact',
         name: 'ContactView',
-        component: () => import('../views/ContactView.vue')
+        component: ContactView
     },
     {
         path: '/settings',
         name: 'SettingsView',
-        component: () => import('../views/SettingsView.vue')
+        component: SettingsView
     }
 ]
 
