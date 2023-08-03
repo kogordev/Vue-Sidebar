@@ -1,9 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from '../views/HomeView.vue'
-import AboutView from '../views/AboutView.vue'
-import TeamView from "../views/TeamView.vue";
-import ContactView from "../views/ContactView.vue";
-import SettingsView from "../views/SettingsView.vue";
 
 const routes = [
     {
@@ -14,23 +10,27 @@ const routes = [
     {
         path: '/about',
         name: 'AboutView',
-        component: AboutView
+        component: () => import('../views/AboutView.vue')
     },
     {
         path: '/team',
         name: 'TeamView',
-        component: TeamView
+        component: () => import('../views/TeamView.vue')
     },
     {
         path: '/contact',
         name: 'ContactView',
-        component: ContactView
+        component: () => import('../views/ContactView.vue')
     },
     {
         path: '/settings',
         name: 'SettingsView',
-        component: SettingsView
-    }
+        component: () => import('../views/SettingsView.vue')
+    },
+    {
+        path: "/*",
+        component: 404
+    },
 ]
 
 const router = createRouter({
